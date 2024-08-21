@@ -1,0 +1,37 @@
+#include <iostream>
+
+bool isPerfectNumber(int number) {
+    int sum = 0;
+
+    // Loop to find all proper divisors
+    for (int i = 1; i <= number / 2; ++i) {
+        if (number % i == 0) {
+            sum += i; // Add the divisor to sum
+        }
+    }
+
+    // Check if sum of proper divisors is equal to the number
+    return sum == number;
+}
+
+int main() {
+    int num;
+
+    // Asking the user to enter a number
+    std::cout << "Enter a number: ";
+    std::cin >> num;
+
+    // Check if the number is a perfect number
+    if (num <= 0) {
+        std::cout << "Please enter a positive integer." << std::endl;
+        return 1;
+    }
+
+    if (isPerfectNumber(num)) {
+        std::cout << num << " is a perfect number." << std::endl;
+    } else {
+        std::cout << num << " is not a perfect number." << std::endl;
+    }
+
+    return 0;
+}
