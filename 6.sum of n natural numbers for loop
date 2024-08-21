@@ -1,0 +1,23 @@
+#include <iostream>
+
+int main() {
+    int n, sum = 0;
+    int numbers[] = {2, 5, 8};  // Input numbers
+
+    std::cout << "Enter the value of n: ";
+    std::cin >> n;
+
+    // Check if n is within the range of the number of elements in the array
+    if (n > 0 && n <= sizeof(numbers)/sizeof(numbers[0])) {
+        // Calculate the sum of the first n numbers using a for loop
+        for (int i = 0; i < n; ++i) {
+            sum += numbers[i];
+        }
+
+        std::cout << "The sum of the first " << n << " numbers is: " << sum << std::endl;
+    } else {
+        std::cout << "Invalid value of n." << std::endl;
+    }
+
+    return 0;
+}
