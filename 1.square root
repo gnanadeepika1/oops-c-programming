@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath> // Include the cmath library for sqrt function
+
+int main() {
+    double number, result;
+
+    // Asking the user to enter a number
+    std::cout << "Enter a number: ";
+    std::cin >> number;
+
+    // Finding the square root
+    result = sqrt(number);
+
+    // Displaying the result
+    std::cout << "The square root of " << number << " is " << result << std::endl;
+
+    return 0;
+}
