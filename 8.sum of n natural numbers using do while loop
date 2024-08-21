@@ -1,0 +1,26 @@
+#include <iostream>
+
+int main() {
+    int n, sum = 0, i = 1;
+
+    // Asking the user to enter the value of n
+    std::cout << "Enter the value of n: ";
+    std::cin >> n;
+
+    // Ensure that n is positive
+    if (n <= 0) {
+        std::cout << "The value of n should be a positive integer." << std::endl;
+        return 1;
+    }
+
+    // Using a do-while loop to calculate the sum of the first n natural numbers
+    do {
+        sum += i;
+        i++;
+    } while (i <= n);
+
+    // Displaying the result
+    std::cout << "The sum of the first " << n << " natural numbers is: " << sum << std::endl;
+
+    return 0;
+}
