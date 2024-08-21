@@ -1,0 +1,21 @@
+#include <iostream>
+
+int main() {
+    int n, sum = 0;
+    int i = 1; // Initialize counter
+
+    // Prompt the user to enter the number
+    std::cout << "Enter the value of n: ";
+    std::cin >> n;
+
+    // Using while loop to calculate the sum of first n natural numbers
+    while (i <= n) {
+        sum += i;
+        i++;
+    }
+
+    // Display the result
+    std::cout << "The sum of the first " << n << " natural numbers is: " << sum << std::endl;
+
+    return 0;
+}
