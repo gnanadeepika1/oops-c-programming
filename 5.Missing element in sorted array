@@ -1,0 +1,36 @@
+#include <iostream>
+
+int findMissingElement(int arr[], int size) {
+    int start = 0;
+    int end = size - 1;
+    int missingElement = -1;
+
+    while (start <= end) {
+        int mid = start + (end - start) / 2;
+
+        // Check if the difference between the mid element and its index is not consistent
+        if (arr[mid] != mid + arr[0]) {
+            missingElement = mid + arr[0];
+            end = mid - 1;
+        } else {
+            start = mid + 1;
+        }
+    }
+
+    return missingElement;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 6, 7, 8, 9}; // Example sorted array with a missing element
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    int missingElement = findMissingElement(arr, size);
+
+    if (missingElement != -1) {
+        std::cout << "The missing element is: " << missingElement << std::endl;
+    } else {
+        std::cout << "No element is missing." << std::endl;
+    }
+
+    return 0;
+}
