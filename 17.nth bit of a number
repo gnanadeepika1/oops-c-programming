@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+// Function to set the nth bit of a number
+int setNthBit(int number, int n) {
+    // Create a mask with the nth bit set
+    int mask = 1 << n;
+
+    // Use the bitwise OR operation to set the nth bit
+    return number | mask;
+}
+
+int main() {
+    int number, n;
+
+    // Prompt user to enter the number and the bit position
+    cout << "Enter the number: ";
+    cin >> number;
+    cout << "Enter the bit position (n) to set: ";
+    cin >> n;
+
+    // Validate the bit position
+    if (n < 0 || n >= sizeof(int) * 8) {
+        cout << "Invalid bit position! Please enter a position between 0 and " << sizeof(int) * 8 - 1 << "." << endl;
+        return 1;
+    }
+
+    // Set the nth bit of the number
+    int result = setNthBit(number, n);
+
+    // Print the result
+    cout << "Number after setting the " << n << "th bit: " << result << endl;
+
+    return 0;
+}
