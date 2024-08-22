@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+int main() {
+    std::string str;
+
+    // Input string from user
+    std::cout << "Enter a string in uppercase: ";
+    std::getline(std::cin, str);
+
+    // Convert string to lowercase using the transform function
+    std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+
+    // Output the lowercase string
+    std::cout << "String in lowercase: " << str << std::endl;
+
+    return 0;
+}
