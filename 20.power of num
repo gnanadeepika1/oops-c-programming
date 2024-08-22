@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double base, result = 1.0;
+    int exponent;
+
+    // Input base and exponent
+    cout << "Enter base: ";
+    cin >> base;
+    cout << "Enter exponent: ";
+    cin >> exponent;
+
+    // Calculate the power
+    if (exponent >= 0) {
+        for (int i = 0; i < exponent; i++) {
+            result *= base;
+        }
+    } else {
+        for (int i = 0; i < -exponent; i++) {
+            result /= base;
+        }
+    }
+
+    // Output the result
+    cout << base << "^" << exponent << " = " << result << endl;
+
+    return 0;
+}
