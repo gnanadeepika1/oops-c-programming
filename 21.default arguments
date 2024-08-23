@@ -1,0 +1,16 @@
+#include <iostream>
+
+// Function with default arguments
+int sum(int a = 10, int b = 15, int c = 25, int d = 30) {
+    return a + b + c + d;
+}
+
+int main() {
+    // Call the function without passing any arguments
+    int result = sum();
+    
+    // Output the result
+    std::cout << "The sum is: " << result << std::endl;
+
+    return 0;
+}
