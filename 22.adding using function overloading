@@ -1,0 +1,29 @@
+#include <iostream>
+
+// Function to add two integers
+int add(int a, int b) {
+    return a + b;
+}
+
+// Overloaded function to add three integers
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+int main() {
+    int x = 10;
+    int y = 20;
+    int z = 60;
+
+    // Call the add function with two parameters
+    int result1 = add(x, y);
+    
+    // Call the add function with three parameters
+    int result2 = add(x, y, z);
+    
+    // Output the results
+    std::cout << "The value of addition using two parameters is " << result1 << std::endl;
+    std::cout << "The value of addition using three parameters is " << result2 << std::endl;
+
+    return 0;
+}
