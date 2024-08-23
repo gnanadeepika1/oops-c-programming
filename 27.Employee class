@@ -1,0 +1,107 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Base Class
+class Employee {
+protected:
+    string empname;
+    int empid;
+    string address;
+    string mail_id;
+    long long mobile_no;
+
+public:
+    // Constructor
+    Employee(string name, int id, string addr, string mail, long long mobile)
+        : empname(name), empid(id), address(addr), mail_id(mail), mobile_no(mobile) {}
+
+    // Function to display Employee details
+    void displayDetails() {
+        cout << "Employee Name: " << empname << endl;
+        cout << "Employee ID: " << empid << endl;
+        cout << "Address: " << address << endl;
+        cout << "Mail ID: " << mail_id << endl;
+        cout << "Mobile No: " << mobile_no << endl;
+    }
+};
+
+// Derived Class for Programmer
+class Programmer : public Employee {
+private:
+    string programming_language;
+
+public:
+    Programmer(string name, int id, string addr, string mail, long long mobile, string lang)
+        : Employee(name, id, addr, mail, mobile), programming_language(lang) {}
+
+    void displayDetails() {
+        Employee::displayDetails();
+        cout << "Programming Language: " << programming_language << endl;
+    }
+};
+
+// Derived Class for Assistant Professor
+class AssistantProfessor : public Employee {
+private:
+    string department;
+
+public:
+    AssistantProfessor(string name, int id, string addr, string mail, long long mobile, string dept)
+        : Employee(name, id, addr, mail, mobile), department(dept) {}
+
+    void displayDetails() {
+        Employee::displayDetails();
+        cout << "Department: " << department << endl;
+    }
+};
+
+// Derived Class for Associate Professor
+class AssociateProfessor : public Employee {
+private:
+    string department;
+
+public:
+    AssociateProfessor(string name, int id, string addr, string mail, long long mobile, string dept)
+        : Employee(name, id, addr, mail, mobile), department(dept) {}
+
+    void displayDetails() {
+        Employee::displayDetails();
+        cout << "Department: " << department << endl;
+    }
+};
+
+// Derived Class for Professor
+class Professor : public Employee {
+private:
+    string department;
+
+public:
+    Professor(string name, int id, string addr, string mail, long long mobile, string dept)
+        : Employee(name, id, addr, mail, mobile), department(dept) {}
+
+    void displayDetails() {
+        Employee::displayDetails();
+        cout << "Department: " << department << endl;
+    }
+};
+
+int main() {
+    // Creating objects of each class
+    Programmer prog("Alice", 101, "123 Street, City", "alice@mail.com", 9876543210, "C++");
+    AssistantProfessor asstProf("Bob", 102, "456 Avenue, City", "bob@mail.com", 9876543211, "Computer Science");
+    AssociateProfessor assocProf("Charlie", 103, "789 Road, City", "charlie@mail.com", 9876543212, "Mathematics");
+    Professor prof("David", 104, "101 Boulevard, City", "david@mail.com", 9876543213, "Physics");
+
+    // Displaying details
+    cout << "Programmer Details:" << endl;
+    prog.displayDetails();
+    cout << "\nAssistant Professor Details:" << endl;
+    asstProf.displayDetails();
+    cout << "\nAssociate Professor Details:" << endl;
+    assocProf.displayDetails();
+    cout << "\nProfessor Details:" << endl;
+    prof.displayDetails();
+
+    return 0;
+}
