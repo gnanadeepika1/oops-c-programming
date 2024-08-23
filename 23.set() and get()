@@ -1,0 +1,35 @@
+#include <iostream>
+
+class Box {
+public:
+    int length;  // Public variable for length
+
+    // Member function to set the width
+    void setWidth(int w) {
+        width = w;
+    }
+
+    // Member function to get the width
+    int getWidth() {
+        return width;
+    }
+
+private:
+    int width;  // Private variable for width
+};
+
+int main() {
+    Box box;
+
+    // Set length (directly accessible)
+    box.length = 6;
+
+    // Set width using the setter function
+    box.setWidth(9);
+
+    // Print length and width
+    std::cout << "Length: " << box.length << std::endl;
+    std::cout << "Width: " << box.getWidth() << std::endl;
+
+    return 0;
+}
