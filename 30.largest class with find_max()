@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class largest {
+    int a, b, m;
+
+public:
+    // Function to set the data
+    void setdata(int x, int y) {
+        a = x;
+        b = y;
+    }
+
+    // Declare friend function to find the maximum number
+    friend void find_max(largest l);
+};
+
+// Definition of friend function to find the maximum number
+void find_max(largest l) {
+    if (l.a > l.b) {
+        l.m = l.a;
+    } else {
+        l.m = l.b;
+    }
+    cout << l.m << " is maximum" << endl;
+}
+
+int main() {
+    largest obj;
+
+    // Setting the values of a and b
+    obj.setdata(53, 63);
+
+    // Finding and displaying the maximum value
+    find_max(obj);
+
+    return 0;
+}
